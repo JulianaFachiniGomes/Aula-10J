@@ -20,3 +20,9 @@ dfh = pd.DataFrame(dadosh['dados'])
 dfh['sexo'] = 'M'
 
 todos = pd.concat([dff,dfh])
+
+opcao = st.selectbox(
+    'Qual o sexo?',
+     todos['sexo'].unique())
+dfFiltrado = todos[todos['sexo'] == opcao]
+st.title('Deputados do sexo ' + opcao)
